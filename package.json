@@ -1,7 +1,7 @@
 {
     "name": "dot-packer",
     "version": "0.0.1",
-    "description": "Node.js module that packs doT.js Javascript templates into one js file",
+    "description": "Precompile, compress, and pack doT.js javascript templates into one file",
     "preferGlobal": "true",
     "main": "index.js",
     "bin": { "dot-packer": "index.js" },
