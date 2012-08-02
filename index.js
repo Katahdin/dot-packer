@@ -10,7 +10,7 @@ var program = require('commander');
 
 program
   .version('0.0.1')
-  .usage('dot-cram')
+  .usage('dot-packer')
   .option('-d, --dir [value]', 'Target directory <path>')
   .option('-o, --output [value]', 'Output file <path>', "jst.js")
   .option('-n, --ns [value]', 'The GLOBAL variable to pack the templates in',"JST")
