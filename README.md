@@ -10,12 +10,12 @@ Installation:
 	Note: Based on your permissions you may have to use sudo
 
 Dependencies:
-	doT - The fastest + concise javascript template engine
-	UglifyJS – a JavaScript parser/compressor/beautifier
+	1.	doT - The fastest + concise javascript template engine
+	2.	UglifyJS – a JavaScript parser/compressor/beautifier
 
 Usage:  
 
-dot-packer -d templates/ -o ./templates.js
+	dot-packer -d templates/ -o ./templates.js
 
 Options:
 
@@ -24,19 +24,19 @@ Options:
 	-n  The GLOBAL variable to pack the templates in. (default:JST)
 	
 
-Example
+Example:
 	
 Create a doT.js template (templates/sample.jst).
 
-<ul id="scores">
-	{{~scores:score:index}}
-	<li>{{=score}}</li>
-	{{~}}
-</ul>
+	<ul id="scores">
+		{{~scores:score:index}}
+			<li>{{=score}}</li>
+		{{~}}
+	</ul>
 
 dot-packer -d templates/ -o ./templates.js
 
 Once you include the templates.js in your webpage you can access
 the template in javascript.
 
-html = JST.sample(data);
+	html = JST.sample(data);
