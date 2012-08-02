@@ -10,8 +10,8 @@ dot-packer
 	Note: Based on your permissions you may have to use sudo
 
 ### Dependencies:
-1.	doT - The fastest + concise javascript template engine
-2.	UglifyJS – a JavaScript parser/compressor/beautifier
+1.	[doT](https://github.com/olado/doT) - The fastest + concise javascript template engine
+2.	[UglifyJS](https://github.com/mishoo/UglifyJS/) – a JavaScript parser/compressor/beautifier
 
 ###Usage:  
 
