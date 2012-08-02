@@ -29,14 +29,14 @@ dot-packer
 Create a doT.js template (templates/sample.jst).
 
 	<ul id="scores">
-		{{~scores:score:index}}
+		{{~it.scores:score:index}}
 			<li>{{=score}}</li>
 		{{~}}
 	</ul>
 
 	dot-packer -d templates/ -o ./templates.js
 	
-Once you include the templates.js in your webpage you can access
+Once you include the templates.js file in your webpage you can access
 the template in javascript.
 
 	html = JST.sample(data);
