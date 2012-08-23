@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/Katahdin/dot-packer.png)](http://travis-ci.org/Katahdin/dot-packer)
 ####dot-packer.js - precompile,compress, and pack doT.js javascript template(s) into one js file.
 
 dot-packer
