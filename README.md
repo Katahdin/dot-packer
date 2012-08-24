@@ -12,6 +12,8 @@ dot-packer
 ### Dependencies:
 1.	[doT](https://github.com/olado/doT) - The fastest + concise javascript template engine
 2.	[UglifyJS](https://github.com/mishoo/UglifyJS/) – a JavaScript parser/compressor/beautifier
+	
+	Note: NPM should install these automaticly
 
 ###Usage:  
 
@@ -26,7 +28,7 @@ dot-packer
 
 ###Example:
 	
-Create a doT.js template (templates/sample.jst).
+Create a doT.js template (templates/sample.jst).  Templates must have a .jst extention.
 
 	<ul id="scores">
 		{{~it.scores:score:index}}
