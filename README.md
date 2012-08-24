@@ -28,7 +28,7 @@ dot-packer
 
 ###Example:
 	
-Create a doT.js template (templates/sample.jst).  Templates must have a .jst extention.
+Create a doT.js template (templates/sample.jst).  Templates must have a .jst extension.
 
 	<ul id="scores">
 		{{~it.scores:score:index}}
