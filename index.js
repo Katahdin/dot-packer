@@ -3,8 +3,7 @@
 var fs = require('fs');
 var dot = require('dot');
 
-var jsp = require("uglify-js").parser;
-var pro = require("uglify-js").uglify;
+var ugly = require("uglify-js");
 var program = require('commander');
 
 
@@ -34,10 +33,13 @@ else  {
 			}
 		}
 		
-		var ast = jsp.parse(code); // parse code and get the initial AST
-        ast = pro.ast_mangle(ast); // get a new AST with mangled names
-        ast = pro.ast_squeeze(ast); // get an AST with compression optimizations
-        var final_code = pro.gen_code(ast); // compressed code here
+		var ast = ugly.parse(code); // parse code and get the initial AST
+		ast.figure_out_scope();
+		var compressed=ast.transform(ugly.Compressor());
+		compressed.figure_out_scope();
+		compressed.compute_char_frequency();
+		compressed.mangle_names();
+	        var final_code = compressed.print_to_string(); // compressed code here
         
 		fs.writeFileSync(program.output,final_code, 'ascii');
 	}
