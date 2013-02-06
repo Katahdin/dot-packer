@@ -11,6 +11,7 @@ program
   .version('0.0.1')
   .usage('dot-packer')
   .option('-d, --dir [value]', 'Target directory <path>')
+  .option('-e, --encoding [value]', 'file encoding to be used (in and out). can be ascii or utf8. defaults to utf8.')
   .option('-o, --output [value]', 'Output file <path>', "jst.js")
   .option('-n, --ns [value]', 'The GLOBAL variable to pack the templates in',"JST")
   .parse(process.argv);
@@ -41,7 +42,7 @@ else  {
 		compressed.mangle_names();
 	        var final_code = compressed.print_to_string(); // compressed code here
         
-		fs.writeFileSync(program.output,final_code, 'ascii');
+		fs.writeFileSync(program.output,final_code, program.encoding);
 	}
 	
 	catch(err) {
@@ -51,7 +52,7 @@ else  {
 
 function convert(fileName, namespace){
 	var path = program.dir + fileName;
-	var data = fs.readFileSync(path, 'ascii');
+	var data = fs.readFileSync(path, program.encoding);
     var code = dot.template(data).toString();
     var header = namespace+"['"+fileName.replace('.jst','')+"'] = function(it)";
     code = code.replace('function anonymous(it)', header)+";";
