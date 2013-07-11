@@ -1,6 +1,6 @@
 {
     "name": "dot-packer",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "description": "Precompile, compress, and pack doT.js javascript templates into one file",
     "preferGlobal": "true",
     "main": "index.js",
