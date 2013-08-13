@@ -24,8 +24,9 @@ else  {
 	
 	try {
 		
-		var code = program.ns + "= function(){ return new Function();};";
         var file = null;
+		var code = "if(typeof(" + program.ns + ")==='undefined')" +
+		           program.ns + "=function(){ return new Function();};";
 		var files = fs.readdirSync(program.dir);
 		for (i in files) {
 			if (files[i].match(/^[^\.]*\.jst/g)) {
