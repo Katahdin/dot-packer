@@ -56,7 +56,7 @@ function convert(fileName, namespace){
 	var data = fs.readFileSync(path, program.encoding);
     var code = dot.template(data).toString();
     var header = namespace+"['"+fileName.replace('.jst','')+"'] = function(it)";
-    code = code.replace('function anonymous(it)', header)+";";
+    code = code.replace(/function anonymous\([^\)]+\)/, header)+";";
 	return code;
 }
 
